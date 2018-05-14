@@ -1,7 +1,7 @@
 class Availability < ActiveRecord::Base
 	
-	 has_many :players
-	 has_many :games
+	belongs_to :players
+	belongs_to :games
  
 
 end

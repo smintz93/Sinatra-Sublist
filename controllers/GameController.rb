@@ -26,6 +26,19 @@ class GameController < ApplicationController
 
 	end	
 
+	get "/:id" do
+		# Getting all games for whichever team name you want to enter
+		team = Team.find params[:id]
+		# binding.pry
+		this_team_games = team.games
+		{
+			success: true,
+			message: "Games for team #{team.team_name}",
+			team_games: this_team_games
+		}.to_json
+
+	end	
+
 
 
 

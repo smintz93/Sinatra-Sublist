@@ -1,5 +1,7 @@
 class Player < ActiveRecord::Base
 	
- belongs_to :teams
+ has_many :games
+
+ has_many :teams, through: :availability
 
 end
