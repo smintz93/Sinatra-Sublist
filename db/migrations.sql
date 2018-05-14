@@ -29,8 +29,8 @@ CREATE TABLE teams(
 
 CREATE TABLE games(
     id SERIAL PRIMARY KEY,
-    date VARCHAR(256),
-    time VARCHAR(256),
+    game_date VARCHAR(256),
+    game_time VARCHAR(256),
     team_id INT REFERENCES teams(id)
     
 );
