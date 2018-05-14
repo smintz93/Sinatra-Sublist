@@ -33,9 +33,8 @@ class TeamController < ApplicationController
 		}.to_json	
 	end
 
+	get "/players" do 
 
-
-	get "/player" do 
 		players = Players.all params[:id]
 		players = players.games
 		{  
@@ -44,6 +43,8 @@ class TeamController < ApplicationController
 			players: players
 		}.to_json	
 	end
+
+		
 
 
 

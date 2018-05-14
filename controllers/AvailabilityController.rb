@@ -24,22 +24,36 @@ class AvailabilityController < ApplicationController
 
 	get "/players" do
 
-		binding.pry
-		Player.where(available === TRUE).find_each do |player|
+		# binding.pry
 
-		end	
+		available_players = Availability.where(available: true)
 
-		# players = Player.all
-		# available_players = players.available
 
 		{  
 			success: true,
-			message: "You are hitting available Controller",
-			players: players
+			message: "You are hitting looking at all the available Players",
+			players: available_players
 		}.to_json
 
 	end 
+
+
+	get "/games/:id/players" do 
+		game = Game.find params[:id]
+
+		available_players_game = game.players
+
+		{
+			success: true,
+			message: "These players are available for game #{game.id}",
+			players: available_players_game
+		}.to_json
+	end	
+
+
+
 	get "/games" do
+
 		games = Game.all
 		
 

@@ -12,6 +12,9 @@ class PlayerController < ApplicationController
 	end	
 
 
+
+
+
 	get "/" do 
 		players = Player.all
 
@@ -33,6 +36,9 @@ class PlayerController < ApplicationController
 			}.to_json	
 
 	end	
+
+
+
 
 
 
