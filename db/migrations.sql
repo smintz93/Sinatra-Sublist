@@ -27,8 +27,8 @@ CREATE TABLE players(
     name VARCHAR(256),
     pos VARCHAR(3),
     email VARCHAR(256),
-    phone VARCHAR(15),
-    game_id INT REFERENCES games(id)
+    phone VARCHAR(15)
+    -- game_id INT REFERENCES games(id)
 
 );
 

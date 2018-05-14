@@ -23,7 +23,13 @@ class AvailabilityController < ApplicationController
 	end 
 
 	get "/players" do
-		players = Player.all
+
+		binding.pry
+		Player.where(available === TRUE).find_each do |player|
+
+		end	
+
+		# players = Player.all
 		# available_players = players.available
 
 		{  
