@@ -8,6 +8,7 @@ require './controllers/ApplicationController'
 require './controllers/GameController'
 require './controllers/PlayerController'
 require './controllers/TeamController'
+require './controllers/AvailabilityController'
 
 
 # Models
@@ -29,6 +30,9 @@ map('/games') {
 
 map('/player') {
 	run PlayerController
+}
+map('/available') {
+	run AvailabilityController
 }
 
 map('/team') {

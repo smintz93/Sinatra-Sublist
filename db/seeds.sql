@@ -10,28 +10,28 @@ INSERT INTO teams (team_name ) VALUES ('C');
 INSERT INTO teams (team_name ) VALUES ('D');
 
 
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/4/18', 1);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/4/18', 2);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/4/18', 3);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/4/18', 4);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/11/18', 1);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/11/18', 3);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/11/18', 2);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/11/18', 4);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/18/18', 2);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/18/18', 3);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/18/18', 1);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/18/18', 4);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/25/18', 3);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('7', '6/25/18', 4);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/25/18', 1);
-INSERT INTO games (game_date,  game_time, team_id) VALUES ('9', '6/25/18', 2);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/4/18', 1);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/4/18', 2);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/4/18', 3);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/4/18', 4);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/11/18', 1);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/11/18', 3);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/11/18', 2);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/11/18', 4);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/18/18', 2);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/18/18', 3);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/18/18', 1);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/18/18', 4);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/25/18', 3);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('7', '6/25/18', 4);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/25/18', 1);
+INSERT INTO games (game_time,  game_date, team_id) VALUES ('9', '6/25/18', 2);
 
-INSERT into availability (player_id, game_id, available)  VALUES (1, 2, TRUE);
-INSERT into availability (player_id, game_id, available)  VALUES (2, 4, TRUE);
-INSERT into availability (player_id, game_id, available)  VALUES (3, 1, FALSE);
-INSERT into availability (player_id, game_id, available)  VALUES (4, 6, TRUE);
-INSERT into availability (player_id, game_id, available)  VALUES (5, 2, TRUE);
+INSERT into availabilities (player_id, game_id, available)  VALUES (1, 2, TRUE);
+INSERT into availabilities (player_id, game_id, available)  VALUES (2, 4, TRUE);
+INSERT into availabilities (player_id, game_id, available)  VALUES (3, 1, FALSE);
+INSERT into availabilities (player_id, game_id, available)  VALUES (4, 6, TRUE);
+INSERT into availabilities (player_id, game_id, available)  VALUES (5, 2, TRUE);
 
 
 
