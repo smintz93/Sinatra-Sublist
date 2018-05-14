@@ -22,7 +22,7 @@ CREATE TABLE teams(
     id SERIAL PRIMARY KEY,
     username VARCHAR(256),
     password_digest VARCHAR(256),
-    name VARCHAR(256),
+    team_name VARCHAR(256),
     
     
 );

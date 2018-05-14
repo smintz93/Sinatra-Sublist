@@ -4,10 +4,10 @@ INSERT INTO players (name, pos, email, phone) VALUES ("Irwin", "Fwd", "Irwin@gma
 INSERT INTO players (name, pos, email, phone) VALUES ("Samat", "Mid", "Samat@gmail.com", "312-232-2356");
 INSERT INTO players (name, pos, email, phone) VALUES ("MJ", "Fwd", "MJ@gmail.com", "312-665-2312");
 
-INSERT INTO teams (name) VALUES ("A");
-INSERT INTO teams (name) VALUES ("B");
-INSERT INTO teams (name) VALUES ("C");
-INSERT INTO teams (name) VALUES ("D");
+INSERT INTO teams (team_name ) VALUES ("A");
+INSERT INTO teams (team_name ) VALUES ("B");
+INSERT INTO teams (team_name ) VALUES ("C");
+INSERT INTO teams (team_name ) VALUES ("D");
 
 
 INSERT INTO games (game_date,  game_time, team_id) VALUES ("7", "6/4/18", 1);
