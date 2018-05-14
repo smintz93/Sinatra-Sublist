@@ -27,6 +27,21 @@ class PlayerController < ApplicationController
 	
 	end	
 
+	post '/login' do
+
+		username = @payload[:username]
+		password = @payload[:password]
+
+		player = Player.find_by username: username
+
+		{
+			success: true,
+			message: "This is the login Player route"
+		}.to_json
+
+
+	end	
+
 
 	get "/" do 
 		players = Player.all
