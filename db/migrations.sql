@@ -27,18 +27,18 @@ CREATE TABLE teams(
 	name VARCHAR(256),
 	location VARCHAR(256),
 	player_id INT REFERENCES players(id),
-	game_id INT REFERENCES games(id),
+	-- game_id INT REFERENCES games(id),
 );
 
-CREATE TABLE enrollments(
-	id SERIAL PRIMARY KEY,
-	player_id INT REFERENCES players(id),
-	team_id INT REFERENCES teams(id)
-);
+-- CREATE TABLE enrollments(
+-- 	id SERIAL PRIMARY KEY,
+-- 	player_id INT REFERENCES players(id),
+-- 	team_id INT REFERENCES teams(id)
+-- );
 
-CREATE TABLE games(
-	id SERIAL PRIMARY KEY,
-	gameinfo DATETIME,
-	team_id INT REFERENCES teams(id),
-);
+-- CREATE TABLE games(
+-- 	id SERIAL PRIMARY KEY,
+-- 	gameinfo DATETIME,
+-- 	team_id INT REFERENCES teams(id),
+-- );
 
