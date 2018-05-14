@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
 
 	get '/' do
 		{
-			success: false,
+			success: true,
 			message: "Please consult the API documentation for SUBLIST"
 		}.to_json
 	end
