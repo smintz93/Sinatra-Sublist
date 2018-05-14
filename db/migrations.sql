@@ -10,10 +10,8 @@ CREATE TABLE teams(
     username VARCHAR(256),
     password_digest VARCHAR(256),
     team_name VARCHAR(256)
-       
+
 );
-
-
 
 CREATE TABLE games(
     id SERIAL PRIMARY KEY,
@@ -22,9 +20,6 @@ CREATE TABLE games(
     team_id INT REFERENCES teams(id)
     
 );
-
-
-
 CREATE TABLE players(
     id SERIAL PRIMARY KEY,
     username VARCHAR(256),
@@ -36,7 +31,6 @@ CREATE TABLE players(
     game_id INT REFERENCES games(id)
 
 );
-
 
 
 CREATE TABLE availabilities(

@@ -22,7 +22,17 @@ class PlayerController < ApplicationController
 			}.to_json	
 
 	end	
+	get "/:id" do 
+		players = Player.find params[:id]
+		this_player_games = players.games
 
+			{  
+				success: true,
+				message: "You are hitting Player Controller",
+				games: this_player_games
+			}.to_json	
+
+	end	
 
 
 
