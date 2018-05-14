@@ -1,6 +1,8 @@
 class Team < ActiveRecord::Base
 	
- has_many :players, through: :enrollment
+ 
+ has_many :games
+
 
 
 end

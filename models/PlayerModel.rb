@@ -1,7 +1,5 @@
 class Player < ActiveRecord::Base
 	
- belongs_to :teams, through: :enrollment
-
-
+ belongs_to :teams, 
 
 end
