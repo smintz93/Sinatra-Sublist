@@ -4,8 +4,26 @@ CREATE DATABASE sublist;
 
 \c sublist
 
-# four tables
 
+
+
+
+CREATE TABLE teams(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(256),
+    password_digest VARCHAR(256),
+    team_name VARCHAR(256)
+    
+    
+);
+
+CREATE TABLE games(
+    id SERIAL PRIMARY KEY,
+    game_date VARCHAR(256),
+    game_time VARCHAR(256),
+    team_id INT REFERENCES teams(id)
+    
+);
 CREATE TABLE players(
     id SERIAL PRIMARY KEY,
     username VARCHAR(256),
@@ -18,27 +36,9 @@ CREATE TABLE players(
 
 );
 
-CREATE TABLE teams(
-    id SERIAL PRIMARY KEY,
-    username VARCHAR(256),
-    password_digest VARCHAR(256),
-    team_name VARCHAR(256),
-    
-    
-);
-
-CREATE TABLE games(
-    id SERIAL PRIMARY KEY,
-    game_date VARCHAR(256),
-    game_time VARCHAR(256),
-    team_id INT REFERENCES teams(id)
-    
-);
-
-
 CREATE TABLE availability(
     id SERIAL PRIMARY KEY,
     player_id INT REFERENCES players(id),
     game_id INT REFERENCES games(id),
     available BOOLEAN
-)
+);
