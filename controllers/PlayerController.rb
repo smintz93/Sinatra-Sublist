@@ -11,8 +11,21 @@ class PlayerController < ApplicationController
 		end
 	end	
 
-
-
+	post '/register' do 
+		player = Player.new
+		player.username = @payload[:username]
+		player.password_digest = @payload[:password_digest]
+		player.name = @payload[:name]
+		player.pos = @payload[:pos]
+		player.email = @payload[:email]
+		player.phone = @payload[:phone]
+		player.save
+		{
+			success: true,
+			message: "This is the register Player route"
+		}.to_json
+	
+	end	
 
 
 	get "/" do 
