@@ -44,6 +44,31 @@ class TeamController < ApplicationController
 		}.to_json	
 	end
 
+
+	post '/register' do 
+		team = Team.new
+		team.username = @payload[:username]
+		team.password = @payload[:password]
+		team.save
+
+		# session[:logget_in] = true
+		session[:username] = team.username
+		session[:team_id] = team.id
+		puts ""
+		puts "hitting"
+		pp session
+		puts ""
+		
+		{
+			success: true,
+			username: team.username,
+			team_id: team.id,
+			message: "You are logged in and have a cookie"
+		}.to_json
+
+	end
+
+
 		
 
 
