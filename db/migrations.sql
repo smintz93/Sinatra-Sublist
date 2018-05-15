@@ -9,7 +9,7 @@ CREATE TABLE teams(
     id SERIAL PRIMARY KEY,
     username VARCHAR(256),
     password_digest VARCHAR(256),
-    -- team_name VARCHAR(256)
+    team_name VARCHAR(256)
 
 );
 
@@ -17,7 +17,10 @@ CREATE TABLE games(
     id SERIAL PRIMARY KEY,
     game_date VARCHAR(256),
     game_time VARCHAR(256),
-    team_id INT REFERENCES teams(id)
+    team1_id INT REFERENCES teams(id),
+    team2_id INT REFERENCES teams(id)
+
+
     
 );
 CREATE TABLE players(

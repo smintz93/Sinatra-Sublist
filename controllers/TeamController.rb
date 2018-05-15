@@ -12,7 +12,7 @@ class TeamController < ApplicationController
 	end	
 
 
-	post '/register' do
+	post "/register" do
 		team = Team.new
 		team.username = @payload[:username]
 		team.password = @payload[:password]
