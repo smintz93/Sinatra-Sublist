@@ -14,14 +14,24 @@ class PlayerController < ApplicationController
 	post '/register' do 
 		player = Player.new
 		player.username = @payload[:username]
-		player.password_digest = @payload[:password_digest]
+		player.password = @payload[:password]
 		player.name = @payload[:name]
 		player.pos = @payload[:pos]
 		player.email = @payload[:email]
 		player.phone = @payload[:phone]
 		player.save
+
+
+
+			session[:logged_in] = true
+			session[:username] = player.username
+			session[:player_id] = player.id
+
+
 		{
 			success: true,
+			player_id: player.id,
+			username: player.username,
 			message: "This is the register Player route"
 		}.to_json
 	
@@ -34,11 +44,23 @@ class PlayerController < ApplicationController
 
 		player = Player.find_by username: username
 
-		{
-			success: true,
-			message: "This is the login Player route"
-		}.to_json
 
+		if player && player.authenticate(password)
+				session[:logged_in] = true
+				session[:username] = username
+				session[:player_id] = player.id
+			{
+				success: true,
+				player_id: player.id,
+				username: username,
+				message: "Login Successful"
+			}.to_json
+		else 
+			{
+				success: false,
+				message: "Invalid username or password"
+			}.to_json
+		end	
 
 	end	
 
@@ -64,11 +86,6 @@ class PlayerController < ApplicationController
 			}.to_json	
 
 	end	
-
-
-
-
-
 
 
 end	
