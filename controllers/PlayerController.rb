@@ -65,6 +65,15 @@ class PlayerController < ApplicationController
 	end	
 
 
+	get "/logout" do
+		session.destroy
+		{
+			success: true,
+			message: "you are now logged out, goodbye"
+		}.to_json
+	end	
+
+
 	get "/" do 
 		players = Player.all
 

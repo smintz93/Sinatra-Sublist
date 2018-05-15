@@ -49,7 +49,7 @@ class TeamController < ApplicationController
 
 		else
 			{
-				message: false,
+				success: false,
 				message: "Invalid username or password"
 			}.to_json
 		end	
@@ -57,9 +57,13 @@ class TeamController < ApplicationController
 
 
 
-
-
-
+	get "/logout" do
+		session.destroy
+		{
+			success: true,
+			message: "you are now logged out, goodbye"
+		}.to_json
+	end
 
 
 
