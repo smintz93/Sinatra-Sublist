@@ -12,6 +12,58 @@ class TeamController < ApplicationController
 	end	
 
 
+	post '/register' do
+		team = Team.new
+		team.username = @payload[:username]
+		team.password = @payload[:password]
+		team.save
+
+			session[:logged_in] = true
+			session[:username] = team.username
+			session[:team_id] = team.id
+
+			{
+				success: true,
+				team_id: team.id,
+				username: team.username,
+				message: "This is register for team rep"
+			}.to_json
+	end	
+
+	post "/login" do 
+		username = @payload[:username]
+		password = @payload[:password]
+
+		team = Team.find_by username: username
+
+		if team && team.authenticate(password)
+			session[:logged_in] = true
+			session[:username] = username
+			session[:team_id] = team.id
+			{
+				success: true,
+				team_id: team.id,
+				username: username,
+				message: "Login Succesful"
+			}.to_json
+
+		else
+			{
+				message: false,
+				message: "Invalid username or password"
+			}.to_json
+		end	
+	end	
+
+
+
+
+
+
+
+
+
+
 	get "/" do 
 		teams = Team.all
 		{  
