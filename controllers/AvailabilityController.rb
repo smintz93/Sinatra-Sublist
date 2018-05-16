@@ -38,7 +38,7 @@ class AvailabilityController < ApplicationController
 	end 
 
 
-	get "/games/:id/players" do 
+	get "/games/players/:id" do 
 		game = Game.find params[:id]
 
 		available_players_game = game.players
