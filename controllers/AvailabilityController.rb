@@ -50,6 +50,17 @@ class AvailabilityController < ApplicationController
 		}.to_json
 	end	
 
+	post "/games/players/:id" do 
+		game = Game.find params[:id]
+
+		available_players_game = game.players
+
+		{
+			success: true,
+			message: "These players are available for game #{game.id}",
+			players: available_players_game
+		}.to_json
+	end	
 
 
 	get "/games" do
