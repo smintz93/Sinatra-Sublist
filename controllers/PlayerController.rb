@@ -11,67 +11,8 @@ class PlayerController < ApplicationController
 		end
 	end	
 
-	post '/register' do 
-		player = Player.new
-		player.username = @payload[:username]
-		player.password = @payload[:password]
-		player.name = @payload[:name]
-		player.pos = @payload[:pos]
-		player.email = @payload[:email]
-		player.phone = @payload[:phone]
-		player.save
 
 
-
-			session[:logged_in] = true
-			session[:username] = player.username
-			session[:player_id] = player.id
-
-
-		{
-			success: true,
-			player_id: player.id,
-			username: player.username,
-			message: "This is the register Player route"
-		}.to_json
-	
-	end	
-
-	post '/login' do
-
-		username = @payload[:username]
-		password = @payload[:password]
-
-		player = Player.find_by username: username
-
-
-		if player && player.authenticate(password)
-				session[:logged_in] = true
-				session[:username] = username
-				session[:player_id] = player.id
-			{
-				success: true,
-				player_id: player.id,
-				username: username,
-				message: "Login Successful"
-			}.to_json
-		else 
-			{
-				success: false,
-				message: "Invalid username or password"
-			}.to_json
-		end	
-
-	end	
-
-
-	get "/logout" do
-		session.destroy
-		{
-			success: true,
-			message: "you are now logged out, goodbye"
-		}.to_json
-	end	
 
 
 	get "/" do 
@@ -94,7 +35,41 @@ class PlayerController < ApplicationController
 				games: this_player_games
 			}.to_json	
 
-	end	
+	end
+
+	post '/' do
+		player = Player.new
+		player.name = @payload[:name]
+		player.username = @payload[:username]
+		player.password = @payload[:password]
+		player.pos = @payload[:pos]
+		player.email = @payload[:email]
+		player.phone= @payload[:phone]
+		player.save
+
+
+
+		{
+			success: true,
+			message: "thank you for registering"
+			player: player
+		}.to_json
+
+	end
+	get "/logout" do
+		session.destroy
+		{
+			success: true,
+			message: "you are now logged out, goodbye"
+		}.to_json
+	end
+
+
+
+
+
+
+
 
 
 end	
