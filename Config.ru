@@ -38,7 +38,3 @@ map('/available') {
 map('/team') {
 	run TeamController
 }
-
-
-
-
