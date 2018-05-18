@@ -3,16 +3,17 @@ class ApplicationController < Sinatra::Base
 	require 'bundler'
 	Bundler.require()
 
+	require './config/environments'
 	register Sinatra::CrossOrigin
 
 	use Rack::MethodOverride  
 	set :method_override, true
 
 
-	ActiveRecord::Base.establish_connection(
- 		:adapter => 'postgresql', 
- 		:database => 'sublist'
-	)
+	# ActiveRecord::Base.establish_connection(
+ # 		:adapter => 'postgresql', 
+ # 		:database => 'sublist'
+	# )
 
 	use Rack::Session::Cookie, :key => 'rac.session',
 							   :path => '/',
